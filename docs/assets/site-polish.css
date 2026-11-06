@@ -132,3 +132,12 @@ body.has-scrolled .site-header{background:rgba(23,30,24,.96)}
 }
 @media(max-width:400px){.hero-stage h1,.hero-stage h2{font-size:clamp(2.35rem,9.35vw,3.55rem)}.product-visual{min-height:150px}}
 @media(prefers-reduced-motion:reduce){.at-stage .at-photo-next{transition:none}}
+
+/* Real Estate 3D-inspired continuity: only show after a visitor makes a selection. */
+.selection-recap{display:flex;flex-direction:column;align-items:flex-start;gap:9px;width:min(100%,650px);margin:30px auto 8px;padding:20px 23px;background:rgba(35,50,40,.065);border-top:1px solid #a89273a8;border-bottom:1px solid #a8927363;text-align:left}
+.selection-recap[hidden]{display:none!important}
+.selection-recap-label{color:#796144;font-size:10px;letter-spacing:.14em;font-weight:800}
+.selection-recap strong{font:700 clamp(13px,1.3vw,17px)/1.55 'DM Sans',sans-serif;color:#1f2c24;overflow-wrap:anywhere}
+.selection-recap a{font-size:12px;font-weight:700;color:#796144;text-decoration:underline;text-underline-offset:4px;margin-top:2px}
+.selection-recap a:hover{color:#26392c}
+@media(max-width:700px){.selection-recap{padding:18px 17px;margin:26px auto 4px}}
