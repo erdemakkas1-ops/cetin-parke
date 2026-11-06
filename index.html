@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#191a16" />
   <meta name="description" content="Çetin Parke — Pamukova / Sakarya. Parke, iç kapı, banyo dolabı ve duşakabin çözümleri." />
   <title>Çetin Parke | Mekânlara Değer Katıyoruz</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://d8j0ntlcm91z4.cloudfront.net" crossorigin />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <style>
@@ -72,12 +72,93 @@
     @media(max-width:700px){.site-header{height:73px;padding:0 18px}.brand-symbol{width:30px;height:30px}.brand-name{font-size:15px}.brand-name small{font-size:6px}.menu{display:none}.header-cta{font-size:10px;padding:10px 12px}.experience{height:390svh}.hero-content{left:25px;width:calc(100% - 76px);top:47%;padding-top:40px}.hero-stage h1,.hero-stage h2{font-size:clamp(2.5rem,10vw,4.3rem)}.hero-stage h1{max-width:100%}.hero-stage .stage-desc{max-width:300px}.steps{right:14px}.step-dot{height:8px;width:8px}.step{gap:0}.intro-overline{left:25px;top:105px}.bottom-bar{left:24px;right:24px;bottom:23px}.concept-note{bottom:85px;right:20px;max-width:170px;line-height:1.5}.collection{padding:90px 24px}.section-top{display:block}.section-top h2{font-size:clamp(2.6rem,9vw,4rem)}.products{gap:24px;grid-template-columns:repeat(2,1fr)}.product-visual{height:190px}.product h3{font-size:19px}.product small{font-size:10px}.product-arrow{font-size:18px}.door-frame{border-width:7px}.statement{padding:110px 23px}.footer{padding:90px 24px 30px}.footer-grid{grid-template-columns:1fr}.footer-base{gap:18px;flex-direction:column;margin-top:50px}}
     @media(max-width:420px){.hero-content{width:calc(100% - 49px)}.hero-stage h1,.hero-stage h2{font-size:clamp(2.3rem,9.8vw,3.5rem)}.stage-desc{font-size:12px}.stage-actions{gap:9px}.btn{min-height:46px;padding:0 13px;gap:10px;font-size:10px}.product-visual{height:165px}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.hero-stage{transition:none!important}.product-visual{transition:none!important}}
-  </style>
+  
+/* Maviron-inspired editorial layer — bespoke Çetin Parke visual identity */
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&display=swap');
+:root{--cp-forest:#121a16;--cp-bone:#f0ece4;--cp-oak:#d8ae78}
+body{overflow-x:clip}
+.site-header{position:fixed;top:0;left:0;right:0;height:78px;background:linear-gradient(180deg,rgba(10,15,13,.9),rgba(10,15,13,.28));border-bottom:1px solid rgba(255,255,255,.22);transition:background .2s,backdrop-filter .2s}
+body.has-scrolled .site-header{background:rgba(14,21,17,.88);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+.brand-name{font-family:'Archivo','Manrope',sans-serif;font-weight:800;letter-spacing:.025em}
+.brand-name em{font-weight:700}
+.hero-content{height:min(460px,65svh);padding-top:0;z-index:3}
+.hero-stage h1,.hero-stage h2{font-family:'Archivo','Manrope',sans-serif;font-weight:800;letter-spacing:-.048em;line-height:.99;font-size:clamp(3.5rem,6.6vw,7.5rem);max-width:760px;text-wrap:balance}
+.hero-stage h1 em,.hero-stage h2 em{font-weight:800;color:#e0b989}
+.hero-stage .stage-desc{font-size:clamp(14px,1.35vw,17px)}
+.section-top h2,.statement h2,.footer h2{font-family:'Archivo','Manrope',sans-serif;font-weight:800;letter-spacing:-.045em;line-height:1.03}
+.section-top h2 em,.statement h2 em,.footer h2 em{font-weight:800}
+.eyebrow{font-family:'DM Sans',sans-serif;font-size:10px;font-weight:700;letter-spacing:.22em}
+.intro-overline{font-family:'DM Sans',sans-serif;letter-spacing:.24em}
+.scene-vignette{background:linear-gradient(90deg,rgba(9,16,12,.85) 0%,rgba(9,16,12,.48) 34%,rgba(9,16,12,.03) 85%),linear-gradient(180deg,rgba(9,14,11,.44),transparent 38%,rgba(9,12,9,.55))}
+.film-hud{position:absolute;right:clamp(24px,5vw,85px);top:125px;z-index:2;display:grid;gap:5px;color:#f8eee0;text-align:right}
+.film-hud .hud-code{font-size:9px;letter-spacing:.24em;color:#e2c7a2}
+.film-hud strong{font-family:'Archivo',sans-serif;font-size:13px;letter-spacing:.12em}
+.film-hud .hud-rule{width:110px;height:1px;background:linear-gradient(90deg,transparent,#dfb683);justify-self:end;margin:6px 0}
+.film-hud small{font-size:10px;color:#d6d4c9}
+.timeline-caption{position:absolute;bottom:86px;left:clamp(24px,5.5vw,95px);font:700 9px 'DM Sans',sans-serif;letter-spacing:.22em;color:#e7c6a0;z-index:3}
+.timeline-caption span{color:white;margin-left:15px}
+.film-hud,.timeline-caption{pointer-events:none}
+.collection{padding-top:130px}
+.collection::before{content:'MALZEME / FORMA / YAŞAM';display:block;letter-spacing:.32em;font-weight:700;font-size:10px;color:#9c805e;margin-bottom:70px}
+.product-visual{border-radius:1px;min-height:300px;transition:transform .4s ease,filter .4s ease}
+.product{position:relative}.product:hover .product-visual{filter:brightness(.93) contrast(1.08)}
+.product:hover .product-arrow{transform:translate(4px,-4px)}
+.product-arrow{transition:transform .2s}
+.product-number{font-weight:700;background:rgba(243,237,228,.87);padding:8px 10px;color:#4d514b}
+.product h3{font-family:'Archivo',sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:-.035em}
+.craft-process{background:var(--cp-bone);color:#1e2821;padding:100px clamp(24px,6vw,108px) 135px;border-bottom:1px solid #d9d2c7}
+.craft-process .craft-heading{display:grid;grid-template-columns:1.3fr 1fr;gap:50px;align-items:end;margin-bottom:68px}
+.craft-process h2,.material-studio h2{font:800 clamp(3rem,6.4vw,7.1rem)/.99 'Archivo','Manrope',sans-serif;letter-spacing:-.05em;margin:25px 0 0}
+.craft-process h2 em,.material-studio h2 em{color:#a17b53;font-style:normal}
+.craft-process .craft-heading p{line-height:1.8;color:#646b65;max-width:410px}
+.craft-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.craft-step{border-top:1px solid #a5a79e;padding-top:23px}
+.craft-step .craft-number{color:#9b825f;font:700 11px 'DM Sans';letter-spacing:.23em}
+.craft-step .craft-bar{width:100%;height:2px;background:#d7d1c4;position:relative;margin:23px 0}
+.craft-step .craft-bar::after{position:absolute;content:'';left:0;top:0;width:33%;height:100%;background:#ab8557}
+.craft-step:nth-child(2) .craft-bar::after{width:67%}.craft-step:nth-child(3) .craft-bar::after{width:100%}
+.craft-step h3{font:800 clamp(1.25rem,2.1vw,2.3rem)/1.15 'Archivo',sans-serif;letter-spacing:-.035em;text-transform:uppercase;margin:15px 0}
+.craft-step p{font-size:13px;color:#6b736b;line-height:1.7}
+.material-studio{background:#1c241e;padding:110px clamp(24px,6vw,108px) 120px;display:grid;grid-template-columns:minmax(290px, .8fr) minmax(0,1.2fr);gap:clamp(30px,5vw,90px);align-items:center}
+.material-studio h2{font-size:clamp(2.8rem,5.1vw,5.8rem)}
+.material-studio h2 em{color:#e3bc8c}
+.studio-copy>p{max-width:480px;line-height:1.85;font-size:14px;color:#b7c2b7;margin:25px 0 35px}
+.studio-meta{font-size:10px;letter-spacing:.18em;color:#bda98d}
+.finish-tabs{display:flex;flex-direction:column;gap:8px;max-width:370px}
+.finish-tabs button{width:100%;min-height:64px;padding:10px 13px;background:#29342b;color:#f6f2e8;border:1px solid #ffffff24;display:flex;gap:14px;align-items:center;text-align:left;cursor:pointer;transition:border-color .2s,background .2s}
+.finish-tabs button[aria-checked=true]{border-color:#dfbb8c;background:#354034}
+.finish-tabs button:hover{border-color:#c1a57f}
+.finish-tabs strong{font-size:14px;font-weight:600}
+.finish-tabs small{font-size:10px;color:#a6b0a4;display:block;margin-top:4px}
+.finish-swatch{width:38px;height:38px;flex:none;background:repeating-linear-gradient(135deg,#ba9368 0 8px,#c5a277 8px 15px,#9f7954 15px 22px);border:1px solid #fff6}
+.finish-swatch.light{filter:brightness(1.2) saturate(.72)}
+.finish-swatch.dark{filter:sepia(.3) brightness(.72) saturate(1.1)}
+.studio-action{margin-top:26px;display:inline-flex;align-items:center;justify-content:space-between;gap:30px;background:#e1bd90;color:#142019;padding:17px 21px;font-size:12px;font-weight:700;text-decoration:none;min-height:52px}
+.studio-action:hover{background:#f5d2a5}
+.studio-notice{display:block;margin-top:18px;color:#aeb9ac;line-height:1.6;font-size:10px;max-width:430px}
+.studio-frame{position:relative;overflow:hidden;background:#3a3b32;box-shadow:0 30px 75px #0005;aspect-ratio:16/10}
+.studio-frame img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;display:block;user-select:none;pointer-events:none}
+.studio-frame .after{clip-path:inset(0 34% 0 0);filter:brightness(1) saturate(1)}
+.studio-frame .studio-split{position:absolute;top:0;bottom:0;left:66%;width:2px;background:#fff;transform:translateX(-50%);pointer-events:none;box-shadow:0 0 13px #0007}
+.studio-split i{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:50px;height:50px;background:#f7f0e5;border-radius:50%;box-shadow:0 6px 20px #0006;display:grid;place-items:center;font-size:22px;font-style:normal;color:#283127}
+.studio-caption{position:absolute;top:22px;left:20px;right:20px;display:flex;justify-content:space-between;gap:20px;font-weight:700;letter-spacing:.15em;font-size:10px;text-shadow:0 2px 9px #000c}
+.studio-compare{display:block;margin:22px 0 0}
+.studio-compare>span{display:flex;justify-content:space-between;align-items:center;font-size:11px;letter-spacing:.14em;margin-bottom:14px;color:#dfc3a0}
+.studio-compare input[type=range]{width:100%;height:3px;accent-color:#e2bd90;cursor:ew-resize}
+.studio-footnote{font-size:11px;margin-top:10px;color:#99a799;line-height:1.5}
+.studio-footnote strong{color:#fff4e5}
+.header-menu-button{display:none;background:none;border:1px solid #fff5;color:white;padding:8px 11px;font-size:19px;cursor:pointer}
+@media(max-width:1080px){.hero-stage h1,.hero-stage h2{font-size:clamp(3.1rem,6.1vw,5.8rem)}.product-visual{min-height:225px}.material-studio{grid-template-columns:1fr;gap:40px}.material-studio h2{max-width:700px}.finish-tabs{display:grid;grid-template-columns:repeat(3,1fr);max-width:none}.finish-tabs button{min-width:0;flex-direction:column;align-items:flex-start;min-height:112px}.craft-process .craft-heading{grid-template-columns:1fr}}
+@media(max-width:700px){.site-header{height:72px}.header-menu-button{display:block;order:4}.site-header .menu{display:none;position:absolute;top:72px;left:0;right:0;background:#19231c;border-bottom:1px solid #daba866b;padding:24px 28px;flex-direction:column;align-items:flex-start;gap:26px;box-shadow:0 20px 40px #0008}.site-header .menu.is-open{display:flex}.header-cta{margin-left:auto;margin-right:9px;font-size:9px}.hero-content{height:min(440px,65svh);top:47%;left:21px;width:calc(100% - 55px)}.hero-stage h1,.hero-stage h2{font-size:clamp(2.55rem,10.1vw,4.6rem);letter-spacing:-.04em}.intro-overline{top:93px}.film-hud{top:96px;right:19px}.film-hud .hud-rule{width:70px}.film-hud small,.film-hud .hud-code{font-size:8px}.timeline-caption{left:23px;bottom:92px;font-size:8px}.timeline-caption span{margin-left:5px}.craft-process{padding:84px 23px 90px}.craft-process h2{font-size:clamp(2.8rem,10vw,4.5rem)}.craft-steps{grid-template-columns:1fr;gap:28px}.craft-step{padding-top:20px}.craft-step .craft-bar{margin:15px 0}.material-studio{padding:85px 23px 95px}.material-studio h2{font-size:clamp(2.6rem,9vw,4.7rem)}.finish-tabs{grid-template-columns:1fr;gap:7px}.finish-tabs button{flex-direction:row;align-items:center;min-height:62px}.studio-frame{aspect-ratio:4/5}.studio-frame img{object-position:center}.studio-caption{font-size:9px;top:15px;left:12px;right:12px}.studio-split i{width:41px;height:41px;font-size:18px}.product-visual{min-height:170px}}
+@media(max-width:420px){.hero-stage h1,.hero-stage h2{font-size:clamp(2.28rem,9.6vw,3.7rem)}.film-hud{top:106px}.film-hud .hud-code{display:none}.film-hud strong{font-size:10px}}
+@media(prefers-reduced-motion:reduce){.site-header,.product-visual,.product-arrow,.finish-tabs button{transition:none!important}}
+</style>
 </head>
 <body>
 <header class="site-header">
   <a class="brand" href="#baslangic" aria-label="Çetin Parke ana sayfa"><span class="brand-symbol"><span></span></span><span class="brand-name">ÇETİN <em>PARKE</em><small>ZEMİN & İÇ MEKÂN ÇÖZÜMLERİ</small></span></a>
   <nav class="menu" aria-label="Ana menü"><a href="#baslangic">Ana Sayfa</a><a href="#koleksiyon">Ürünler</a><a href="#hakkimizda">Hakkımızda</a><a href="#iletisim">İletişim</a></nav>
+  <button type="button" class="header-menu-button" aria-label="Menüyü aç" aria-expanded="false">☰</button>
   <a class="header-cta" href="https://wa.me/905434576364?text=Merhaba%20%C3%87etin%20Parke%2C%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener noreferrer">WhatsApp'tan Teklif Al ↗</a>
 </header>
 <main>
@@ -85,6 +166,8 @@
     <div class="pinned">
       <canvas id="sceneCanvas" aria-label="Beton zeminden parkeye, boş odadan tamamlanmış salona dönüşüm görselleştirmesi" role="img"></canvas>
       <div class="scene-vignette"></div><div class="light-sheen" id="lightSheen"></div>
+      <div class="film-hud" aria-hidden="true"><span class="hud-code">MİMARİ KARE / 001</span><strong id="filmPhase">HAM ZEMİN</strong><span class="hud-rule"></span><small id="filmDetail">MEKÂN / BAŞLANGIÇ</small></div>
+      <div class="timeline-caption" aria-hidden="true">SCROLL DENEYİMİ <span id="filmMeasure">00 · BETON</span></div>
       <span class="intro-overline">ÇETİN PARKE <span style="margin:0 10px;opacity:.6">/</span>  SAKARYA · PAMUKOVA</span>
       <div class="hero-content" id="heroContent">
         <div class="hero-stage" data-stage="0"><span class="eyebrow">01 / BAŞLANGIÇ</span><h1>HAM BİR ALANDAN,<br><em>YAŞAYAN BİR MEKÂNA.</em></h1><p class="stage-desc">Bir yaşam alanının bütün karakteri, ayaklarınızın altından başlar.</p><span class="stage-micro">BETON ZEMİN · İLK ADIM</span></div>
@@ -95,6 +178,43 @@
       <ol class="steps" aria-label="Dönüşüm aşamaları"><li class="step"><i class="step-dot"></i><span>Ham Mekân</span></li><li class="step"><i class="step-dot"></i><span>Parke Uygulaması</span></li><li class="step"><i class="step-dot"></i><span>Mekân Canlanıyor</span></li><li class="step"><i class="step-dot"></i><span>Yeni Yaşam Alanı</span></li></ol>
       <div class="bottom-bar"><div class="scroll-cue"><i class="mouse"></i><span>SCROLL İLE DÖNÜŞTÜR</span></div><div class="scroll-count"><span id="progressText">000%</span><span class="track"><b id="progressBar"></b></span></div></div>
       <div class="concept-note">Konsept görselleştirmedir. Gerçek uygulama fotoğrafı değildir.</div>
+    </div>
+  </section>
+
+  <section class="craft-process" id="surec" aria-labelledby="craft-title">
+    <div class="craft-heading">
+      <div><span class="eyebrow dark">DÖNÜŞÜMÜN ANATOMİSİ</span><h2 id="craft-title">TEK MEKÂN.<br><em>ÜÇ FARKLI HİS.</em></h2></div>
+      <p>Güçlü bir yaşam alanı, tek bir ürün fotoğrafından fazlasını hak eder. Burada aynı ortamı adım adım izleyebilir ve zeminin mekânın atmosferini nasıl değiştirdiğini keşfedebilirsiniz.</p>
+    </div>
+    <div class="craft-steps">
+      <article class="craft-step"><span class="craft-number">01 / ÖNCE</span><div class="craft-bar"></div><h3>Ham zemin</h3><p>Boş bir yüzey. Mekânın dönüşümü için başlangıç noktası.</p></article>
+      <article class="craft-step"><span class="craft-number">02 / UYGULAMA</span><div class="craft-bar"></div><h3>Ahşap dokusu</h3><p>Parkenin karakteri, adım adım zemin üzerinde belirginleşir.</p></article>
+      <article class="craft-step"><span class="craft-number">03 / SONRA</span><div class="craft-bar"></div><h3>Yaşayan mekân</h3><p>Doku, ışık ve mobilyalar birleşerek bütünlüklü bir atmosfer oluşturur.</p></article>
+    </div>
+  </section>
+  <section class="material-studio" id="studio" aria-labelledby="studio-title">
+    <div class="studio-copy">
+      <span class="eyebrow">ÇETİN PARKE / ETKİLEŞİMLİ STÜDYO</span>
+      <h2 id="studio-title">DOKUYU<br><em>SİZ SEÇİN.</em></h2>
+      <p>Beton zeminden ahşabın sıcaklığına geçişi kendiniz kontrol edin. Farklı tonların mekâna kattığı hissi deneyin; hoşunuza giden görünümü teklif mesajınıza ekleyin.</p>
+      <p class="studio-meta">GÖRSEL RENK DENEMELERİ · TEMSİLİ</p>
+      <div class="finish-tabs" role="radiogroup" aria-label="Ahşap tonu">
+        <button type="button" role="radio" aria-checked="true" data-tone="natural"><span class="finish-swatch"></span><span><strong>Doğal Meşe</strong><small>Sıcak ve dengeli</small></span></button>
+        <button type="button" role="radio" aria-checked="false" data-tone="light"><span class="finish-swatch light"></span><span><strong>Açık Meşe</strong><small>Aydınlık ve sade</small></span></button>
+        <button type="button" role="radio" aria-checked="false" data-tone="dark"><span class="finish-swatch dark"></span><span><strong>Koyu Ahşap</strong><small>Derin ve karakterli</small></span></button>
+      </div>
+      <a class="studio-action" id="studio-quote" href="https://wa.me/905434576364" target="_blank" rel="noopener noreferrer">BU GÖRÜNÜMLE TEKLİF İSTE <span aria-hidden="true">↗</span></a>
+      <small class="studio-notice">Bu renk denemeleri konsept görselleştirmedir; Çetin Parke'nin doğrulanmış stok veya renk kataloğu değildir. Gerçek ürün seçeneklerini işletmeden öğrenebilirsiniz.</small>
+    </div>
+    <div class="studio-view">
+      <div class="studio-frame" id="studio-frame" aria-label="Önce ve sonra karşılaştırması">
+        <img class="before" loading="lazy" alt="Beton zeminli boş salon görselleştirmesi" src="https://d8j0ntlcm91z4.cloudfront.net/user_3IjjaE9cBh5rjRvE9kXvd8ehG8t/hf_20261106_093918_a30c67ea-d5ab-42ef-b89b-0f2c2231b273.png">
+        <img class="after" id="studio-finish-image" loading="lazy" alt="Parke döşenmiş aynı salonun görselleştirmesi" src="https://d8j0ntlcm91z4.cloudfront.net/user_3IjjaE9cBh5rjRvE9kXvd8ehG8t/hf_20261106_094127_2ece326a-2b3d-4852-8bfe-458aba96446e.png">
+        <div class="studio-split" id="studio-divider" aria-hidden="true"><i>↔</i></div>
+        <div class="studio-caption" aria-hidden="true"><span>ÖNCE / BETON</span><span>SONRA / PARKE</span></div>
+      </div>
+      <label class="studio-compare" for="studio-slider"><span><b>ÖNCEDEN SONRAYA</b><b id="studio-ratio">66%</b></span><input id="studio-slider" type="range" min="0" max="100" value="66" step="1" aria-label="Beton ve parke görünümünü karşılaştır"></label>
+      <p class="studio-footnote"><strong>Kontrol sizde:</strong> Kaydırıcıyı sağa veya sola sürükleyin. Görseller kendiliğinden hareket etmez.</p>
     </div>
   </section>
   <section class="collection" id="koleksiyon"><div class="section-top"><div><span class="eyebrow dark">ÜRÜN KOLEKSİYONU</span><h2>DETAYLARDA<br><em>FARK YARATIYORUZ.</em></h2></div><p>Yaşam alanınızın her köşesine uyum sağlayan ürün gruplarımızı keşfedin.</p></div><div class="products">
@@ -220,5 +340,51 @@
   resize();onScroll();
 })();
 </script>
-</body>
+
+<script>
+(()=>{'use strict';
+  const root=document.documentElement,body=document.body;
+  const header=document.querySelector('.site-header'),menu=document.querySelector('.site-header .menu');
+  const toggle=document.querySelector('.header-menu-button');
+  const slider=document.getElementById('studio-slider'),image=document.getElementById('studio-finish-image');
+  const divider=document.getElementById('studio-divider'),ratio=document.getElementById('studio-ratio');
+  const quote=document.getElementById('studio-quote');
+  const phase=document.getElementById('filmPhase'),subtitle=document.getElementById('filmDetail'),label=document.getElementById('filmMeasure');
+  const box=document.querySelector('.experience');
+  const steps=[
+    ['HAM ZEMİN','MEKÂN / BAŞLANGIÇ','00 · BETON'],
+    ['PARKE UYGULAMASI','ZEMİN / AHŞAP DOKU','01 · DÖŞEME'],
+    ['MEKÂN CANLANIYOR','DOKU / ATMOSFER','02 · YAŞAM'],
+    ['TAMAMLANAN SALON','TASARIM / SON HAL','03 · DÖNÜŞÜM']
+  ];
+  let raf=0;
+  function frame(){
+    raf=0;const y=window.scrollY||0;
+    body.classList.toggle('has-scrolled',y>18);
+    const r=box.getBoundingClientRect(),distance=Math.max(1,r.height-innerHeight),p=Math.max(0,Math.min(1,-r.top/distance));
+    const index=p<.24?0:p<.64?1:p<.86?2:3;
+    if(phase){phase.textContent=steps[index][0];subtitle.textContent=steps[index][1];label.textContent=steps[index][2]}
+  }
+  function onScroll(){if(!raf)raf=requestAnimationFrame(frame)}
+  addEventListener('scroll',onScroll,{passive:true});addEventListener('resize',onScroll);
+  frame();
+  if(toggle&&menu){toggle.addEventListener('click',()=>{const open=toggle.getAttribute('aria-expanded')!=='true';toggle.setAttribute('aria-expanded',String(open));menu.classList.toggle('is-open',open);toggle.textContent=open?'×':'☰'});menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.classList.remove('is-open');toggle.setAttribute('aria-expanded','false');toggle.textContent='☰'}))}
+  function compare(){
+    if(!slider||!image)return;const p=Math.max(0,Math.min(100,Number(slider.value)||0));
+    image.style.clipPath='inset(0 '+(100-p)+'% 0 0)';
+    divider.style.left=p+'%';ratio.textContent=p+'%';
+  }
+  if(slider){slider.addEventListener('input',compare);compare()}
+  const tones={natural:{label:'Doğal Meşe',filter:'none'},light:{label:'Açık Meşe',filter:'brightness(1.16) saturate(.74)'},dark:{label:'Koyu Ahşap',filter:'sepia(.22) brightness(.75) saturate(1.3)'}};
+  const selectors=[...document.querySelectorAll('[data-tone]')];
+  function choose(key){
+    const tone=tones[key]||tones.natural;
+    selectors.forEach(btn=>btn.setAttribute('aria-checked',String(btn.dataset.tone===key)));
+    if(image)image.style.filter=tone.filter;
+    if(quote)quote.href='https://wa.me/905434576364?text='+encodeURIComponent('Merhaba Çetin Parke. Web sitenizdeki görsel denemede '+tone.label+' görünümünü beğendim. Bu tona yakın gerçek parke seçenekleri hakkında bilgi ve teklif almak istiyorum.');
+  }
+  selectors.forEach(btn=>{btn.addEventListener('click',()=>choose(btn.dataset.tone));btn.addEventListener('keydown',(e)=>{if(e.key!=='ArrowRight'&&e.key!=='ArrowLeft'&&e.key!=='ArrowDown'&&e.key!=='ArrowUp')return;e.preventDefault();const i=selectors.indexOf(btn);const next=selectors[(i+selectors.length+(/Right|Down/.test(e.key)?1:-1))%selectors.length];next.focus();choose(next.dataset.tone)})});
+  choose('natural');
+})();
+</script></body>
 </html>
