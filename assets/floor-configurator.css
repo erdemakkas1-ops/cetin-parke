@@ -59,3 +59,10 @@
 @media(max-width:950px){.at-header{grid-template-columns:1fr;gap:21px}.at-header p{max-width:660px}.at-body{grid-template-columns:1fr}.at-stage{min-height:600px}.at-visual{order:-1}.at-controls{display:grid;grid-template-columns:1fr 1fr;column-gap:22px}.at-headerline,.at-submit,.at-disclaimer{grid-column:1/-1}.at-headerline{padding-bottom:15px}.at-area-result{align-self:end}}
 @media(max-width:650px){.floor-atelier{padding:88px 20px 91px}.at-header{margin-bottom:33px}.at-header h2{font-size:clamp(2.7rem,10vw,4.6rem)}.at-body{gap:25px}.at-stage{min-height:420px;aspect-ratio:3/4}.at-controls{grid-template-columns:1fr;padding:22px}.at-headerline,.at-submit,.at-disclaimer{grid-column:auto}.at-stage-top{top:16px;left:16px;right:16px}.at-stage-bottom{padding:65px 16px 17px}.at-stage-bottom h3{font-size:25px}.at-stage-bottom .at-counter{font-size:9px}.at-info{align-items:flex-start;gap:9px}.at-info b{white-space:normal;text-align:right}.at-swatch-grid{gap:6px}.at-choice{min-height:92px;padding:10px 3px;font-size:10px}.at-choice .at-swatch{width:38px;height:38px}}
 @media(prefers-reduced-motion:reduce){.at-choice,.at-submit{transition:none}}
+
+/* Keep the photorealistic room behind the procedural floor material. */
+.at-stage{background:#ac9d86 url('https://d8j0ntlcm91z4.cloudfront.net/user_3IjjaE9cBh5rjRvE9kXvd8ehG8t/hf_20261106_094127_2ece326a-2b3d-4852-8bfe-458aba96446e.png') center / cover no-repeat}
+.at-stage canvas{-webkit-mask-image:linear-gradient(to bottom,transparent 0%,transparent 56%,#000 66%,#000 100%);mask-image:linear-gradient(to bottom,transparent 0%,transparent 56%,#000 66%,#000 100%)}
+.at-room-fallback{font-size:10px;letter-spacing:.16em;color:#fff;padding:8px 12px;background:#0008}
+.at-open-atelier{display:inline-flex;align-items:center;gap:15px;background:#27312a;border:1px solid #cfaa79;color:#f4e8d7;text-decoration:none;padding:15px 19px;font:700 12px 'DM Sans',sans-serif;margin:26px 0 6px}
+.at-open-atelier:hover{background:#cfa879;color:#152018}
