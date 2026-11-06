@@ -1,0 +1,134 @@
+/* Çetin Parke — client presentation finishing layer.
+   Deliberately calmer than the initial concept; preserves scroll storytelling. */
+:root{--cp-ink:#1c231d;--cp-cream:#f6f3ed;--cp-caramel:#b28c64}
+html{scroll-padding-top:78px}
+body{background:#f6f3ed}
+.site-header{padding-inline:clamp(20px,4.6vw,75px);border-bottom-color:#ffffff2b}
+body.has-scrolled .site-header{background:rgba(23,30,24,.96)}
+.brand-symbol{transform:none;width:30px;height:30px;border-color:#dcb98b;border-radius:0}
+.brand-symbol span{width:11px;height:11px;box-shadow:6px -6px 0 -3px #d1ab7c,-6px 6px 0 -3px #d1ab7c}
+.brand-name{font-family:'Archivo','Manrope',sans-serif;font-size:clamp(15px,1.5vw,18px);letter-spacing:-.025em}
+.brand-name em{font-weight:500}
+.menu{gap:clamp(14px,2vw,30px)}
+.menu a{font-size:11px}
+.header-cta{font-size:11px;padding:12px 16px;border-radius:0;background:transparent}
+.scene-vignette{background:linear-gradient(90deg,rgba(14,20,15,.79) 0%,rgba(14,20,15,.45) 33%,rgba(10,17,13,.03) 82%),linear-gradient(180deg,rgba(13,15,12,.36),transparent 44%,rgba(12,15,11,.48))}
+.hero-stage h1,.hero-stage h2{font-size:clamp(3.35rem,6.4vw,7.1rem);line-height:1.02;letter-spacing:-.055em;text-transform:none}
+.hero-stage h1 em,.hero-stage h2 em{color:#e7c399}
+.hero-stage .eyebrow{font-size:10px;letter-spacing:.19em}
+.stage-desc{max-width:435px;line-height:1.68;letter-spacing:.003em}
+.stage-micro{letter-spacing:.13em;font-size:9px;opacity:.85}
+.intro-overline{font-size:9px;letter-spacing:.17em}
+.film-hud,.timeline-caption{display:none!important}
+.steps{gap:28px;right:clamp(25px,4.6vw,76px)}
+.step{font-size:10px;color:#e5e5de9d}
+.step-dot{width:9px;height:9px}
+.step.active .step-dot{box-shadow:0 0 0 4px #e7ba8530}
+.concept-note{font-size:9px;letter-spacing:.03em;color:#f7f4eb9c;font-weight:400}
+.bottom-bar{bottom:27px}
+.scroll-cue{letter-spacing:.11em}
+.craft-process{background:#eeeae3;padding-block:100px 110px}
+.craft-process .craft-heading{margin-bottom:56px}
+.craft-process h2,.material-studio h2{letter-spacing:-.055em}
+.craft-process .craft-heading p{font-size:14px;max-width:430px;color:#62695e}
+.craft-step{padding-top:27px}
+.craft-step .craft-bar{display:none}
+.craft-step h3{text-transform:none;font-size:clamp(1.55rem,2.5vw,2.25rem);margin:15px 0 12px}
+.craft-step p{max-width:320px;font-size:13px;color:#596258}
+.material-studio{background:#1b241e;padding-block:115px 125px;grid-template-columns:minmax(285px,.63fr) minmax(0,1.37fr);gap:clamp(35px,5vw,92px)}
+.material-studio h2{font-size:clamp(3.5rem,5.6vw,6.5rem)}
+.material-studio .eyebrow,.floor-atelier .at-eyebrow{font-size:10px;letter-spacing:.16em}
+.material-studio .studio-copy>p{margin:24px 0 29px;line-height:1.8;color:#c6ccc3}
+.studio-action{background:transparent;border:1px solid #d1aa7d;color:#f3e3ce;margin-top:5px;font-size:11px;min-height:49px}
+.studio-action:hover{color:#172019}
+.studio-frame{box-shadow:none;aspect-ratio:16/10;border:1px solid #ffffff29}
+.studio-frame .studio-drag-hint{font-size:9px;background:#19231cc7;letter-spacing:.09em}
+.studio-caption{font-size:9px;letter-spacing:.1em}
+.studio-footnote{font-size:11px;color:#aeb8a9;margin-top:15px}
+.collection{background:#f7f4ed;padding-block:120px 120px}
+.collection::before{display:none}
+.collection .section-top{margin-bottom:46px}
+.section-top h2{font-size:clamp(3rem,5.2vw,6.3rem)}
+.section-top p{max-width:375px;font-size:13px;line-height:1.75}
+.products{gap:clamp(14px,2vw,29px)}
+.product-visual{min-height:315px;border:none}
+.product:hover .product-visual{filter:contrast(1.04)}
+.product h3{text-transform:none;font-size:clamp(19px,1.75vw,26px);margin-top:17px}
+.product-number{font-family:'DM Sans',sans-serif;font-size:9px;letter-spacing:.09em;padding:6px 9px}
+.product small{font-size:11px}
+.at-open-atelier{margin-top:46px;border-color:#1f2d22;background:#243328;font-size:11px;text-transform:none;letter-spacing:0}
+.concept-products-notice{margin-top:19px;font-size:10px;color:#86897d}
+.floor-atelier{background:#17211a;padding-block:125px 135px}
+.floor-atelier::before{background:radial-gradient(ellipse at 95% 10%,#63543a25,transparent 58%)}
+.at-header{margin-bottom:50px}
+.at-header h2{font-size:clamp(3.3rem,6.1vw,7rem);letter-spacing:-.055em}
+.at-header p{color:#ccd2c6;font-size:14px;line-height:1.8}
+.at-controls{background:#222d24;border-color:#ffffff2c;padding:clamp(24px,2.4vw,36px)}
+.at-headerline strong{font-size:14px;letter-spacing:.02em;text-transform:none}
+.at-headerline span{font-size:9px}
+.at-label{font-size:10px;letter-spacing:.11em}
+.at-label span{letter-spacing:.02em}
+.at-choice,.at-pattern{border-color:#ffffff21}
+.at-choice[aria-pressed=true],.at-pattern[aria-pressed=true]{box-shadow:none;border-color:#d9b487;background:#333c2f}
+.at-pattern small{font-size:10px;letter-spacing:.03em}
+.at-area-result{background:#18231b}
+.at-submit{background:#d1ab7c}
+.at-submit:hover{background:#f0cea2}
+.at-disclaimer{font-size:10px;color:#b1b8ab}
+.at-stage{background-color:#9b927f;background-image:url('https://d8j0ntlcm91z4.cloudfront.net/user_3IjjaE9cBh5rjRvE9kXvd8ehG8t/hf_20261106_094127_2ece326a-2b3d-4852-8bfe-458aba96446e.png');background-position:center;background-size:cover;min-height:560px}
+.at-stage .at-photo{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;object-position:center;pointer-events:none;user-select:none}
+.at-stage .at-photo-next{opacity:0;transition:opacity .32s ease}
+.at-stage .at-photo-next.visible{opacity:1}
+.at-stage .at-photo-loading{position:absolute;top:57px;right:22px;font-size:10px;color:#eae6dd;text-shadow:0 1px 4px #0008}
+.at-stage-top{top:22px;left:22px;right:22px}
+.at-stage-top strong,.at-stage-top small{font-size:10px}
+.at-stage-bottom{padding-bottom:21px}
+.at-stage-bottom h3{font-size:clamp(20px,2.5vw,30px);text-transform:none}
+.at-info{font-size:11px}
+.at-info b{font-size:10px}
+.statement{background:#e8e2d8;color:#1f2c24;padding:120px 22px}
+.statement .eyebrow{color:#796144}
+.statement h2{max-width:900px;font-size:clamp(3rem,5.3vw,6.3rem)}
+.statement h2 em{color:#93734f}
+.statement p{color:#657166;font-size:15px}
+.statement .btn.primary{margin-top:25px;background:#26352a;color:#f5f1e9}
+.statement .btn.primary:hover{background:#384d3c}
+.footer{background:#18221c;padding-top:115px}
+.footer h2{font-size:clamp(3.4rem,6.1vw,7.5rem)}
+.quick-actions{right:19px;bottom:19px}
+.quick-actions a{border-radius:0}
+@media(max-width:1100px){.material-studio{grid-template-columns:1fr 1.2fr;gap:30px}.product-visual{min-height:260px}}
+@media(max-width:850px){.material-studio{grid-template-columns:1fr;padding-block:86px}.collection{padding-block:85px}.at-stage{min-height:500px}.product-visual{min-height:235px}.craft-process{padding-block:85px}}
+@media(max-width:700px){
+.site-header{height:70px}.brand-name{font-size:15px}.header-cta{font-size:9px}
+.hero-content{left:22px;width:calc(100% - 64px);top:48%}
+.hero-stage h1,.hero-stage h2{font-size:clamp(2.65rem,9.5vw,4.6rem)}
+.hero-stage .eyebrow{font-size:9px;letter-spacing:.12em}
+.intro-overline{left:23px;top:92px}
+.steps{right:14px;gap:30px}
+.stage-micro{margin-top:21px}
+.concept-note{right:20px;bottom:77px;font-size:8px}
+.bottom-bar{left:20px;right:20px}
+.material-studio{padding-inline:22px}
+.material-studio h2{font-size:clamp(3.1rem,9.5vw,4.8rem)}
+.studio-frame{aspect-ratio:4/5}
+.studio-action{min-height:52px}
+.collection{padding-inline:21px}
+.collection .section-top h2{font-size:clamp(2.8rem,10vw,4.7rem)}
+.products{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 14px}
+.product-visual{min-height:175px}
+.product h3{font-size:18px;line-height:1.2}
+.product small{font-size:10px}
+.floor-atelier{padding:86px 20px 90px}
+.at-header h2{font-size:clamp(2.8rem,10.1vw,4.8rem)}
+.at-stage{min-height:420px}
+.at-stage-bottom h3{font-size:19px}
+.at-info{flex-direction:column;align-items:flex-start}
+.craft-process{padding-inline:22px}
+.craft-process h2{font-size:clamp(2.8rem,9.6vw,4.7rem)}
+.craft-steps{gap:30px}
+.statement{padding:95px 24px}
+.footer{padding-top:80px}
+}
+@media(max-width:400px){.hero-stage h1,.hero-stage h2{font-size:clamp(2.35rem,9.35vw,3.55rem)}.product-visual{min-height:150px}}
+@media(prefers-reduced-motion:reduce){.at-stage .at-photo-next{transition:none}}
