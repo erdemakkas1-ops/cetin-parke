@@ -156,10 +156,10 @@ body.has-scrolled .site-header{background:rgba(14,21,17,.88);backdrop-filter:blu
 
 /* Cohesive AI-rendered product concepts, not documented inventory */
 .product-visual{background-size:cover!important;background-repeat:no-repeat;background-position:center!important}
-.art-floor{background-image:url('https://d8j0ntlcm91z4.cloudfront.net/user_3IjjaE9cBh5rjRvE9kXvd8ehG8t/hf_20261106_094127_2ece326a-2b3d-4852-8bfe-458aba96446e.png')!important;background-position:53% 82%!important}
-.art-door{background-image:url('https://d8j0ntlcm91z4.cloudfront.net/user_3IjjaE9cBh5rjRvE9kXvd8ehG8t/hf_20261106_100904_a4245695-f74e-4d43-bf39-e8f24a88819e.png')!important}
-.art-vanity{background-image:url('https://d8j0ntlcm91z4.cloudfront.net/user_3IjjaE9cBh5rjRvE9kXvd8ehG8t/hf_20261106_100903_114a6d07-10b6-4fce-9b26-9ac3a7bd7328.png')!important}
-.art-shower{background-image:url('https://d8j0ntlcm91z4.cloudfront.net/user_3IjjaE9cBh5rjRvE9kXvd8ehG8t/hf_20261106_100904_90453aef-19df-4e0d-ba01-cdb0c61a819a.png')!important}
+.art-floor{background-image:url('assets/site/room-parquet.webp')!important;background-position:53% 82%!important}
+.art-door{background-image:url('assets/site/product-door.webp')!important}
+.art-vanity{background-image:url('assets/site/product-vanity.webp')!important}
+.art-shower{background-image:url('assets/site/product-shower.webp')!important}
 .art-floor::before,.door-frame,.mirror,.sink,.cabinet,.glass{display:none!important}
 .product-visual::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.22),transparent 42%,rgba(0,0,0,.06));pointer-events:none}
 .product-number{color:#392f21;box-shadow:0 2px 20px #0001}
@@ -188,6 +188,7 @@ body.has-scrolled .site-header{background:rgba(14,21,17,.88);backdrop-filter:blu
 </style>
   <link rel="stylesheet" href="assets/floor-configurator.css?v=1"><link rel="stylesheet" href="assets/site-polish.css?v=2">
   <script src="assets/floor-photo-selector.js?v=2" defer></script>
+  <link rel="preload" as="image" href="assets/site/room-concrete.webp" fetchpriority="high">
 </head>
 <body>
 <header class="site-header">
@@ -225,8 +226,8 @@ body.has-scrolled .site-header{background:rgba(14,21,17,.88);backdrop-filter:blu
     </div>
     <div class="studio-view">
       <div class="studio-frame" id="studio-frame" role="slider" tabindex="0" aria-label="Beton ve parke görsel karşılaştırması" aria-describedby="studio-drag-help" aria-valuemin="0" aria-valuemax="100" aria-valuenow="66" aria-valuetext="Parke yüzde 66, beton yüzde 34">
-        <img class="before" loading="lazy" draggable="false" alt="" src="https://d8j0ntlcm91z4.cloudfront.net/user_3IjjaE9cBh5rjRvE9kXvd8ehG8t/hf_20261106_093918_a30c67ea-d5ab-42ef-b89b-0f2c2231b273.png">
-        <img class="after" id="studio-finish-image" loading="lazy" draggable="false" alt="" src="https://d8j0ntlcm91z4.cloudfront.net/user_3IjjaE9cBh5rjRvE9kXvd8ehG8t/hf_20261106_094127_2ece326a-2b3d-4852-8bfe-458aba96446e.png">
+        <img class="before" loading="lazy" draggable="false" alt="" src="assets/site/room-concrete.webp">
+        <img class="after" id="studio-finish-image" loading="lazy" draggable="false" alt="" src="assets/site/room-parquet.webp">
         <div class="studio-split" id="studio-divider" aria-hidden="true"><i>↔</i></div>
         <div class="studio-caption" aria-hidden="true"><span>ÖNCE / BETON</span><span>SONRA / PARKE</span></div>
         <div class="studio-drag-hint" id="studio-drag-hint" aria-hidden="true">SAĞA / SOLA SÜRÜKLE <span>↔</span></div>
@@ -303,8 +304,8 @@ body.has-scrolled .site-header{background:rgba(14,21,17,.88);backdrop-filter:blu
   // The ONLY animation clock is scroll progress. There are no video elements,
   // auto-play loops, timers or autonomous GSAP timelines.
   const sources={
-    raw:'https://d8j0ntlcm91z4.cloudfront.net/user_3IjjaE9cBh5rjRvE9kXvd8ehG8t/hf_20261106_093918_a30c67ea-d5ab-42ef-b89b-0f2c2231b273.png',
-    wood:'https://d8j0ntlcm91z4.cloudfront.net/user_3IjjaE9cBh5rjRvE9kXvd8ehG8t/hf_20261106_094127_2ece326a-2b3d-4852-8bfe-458aba96446e.png',
+    raw:'assets/site/room-concrete.webp',
+    wood:'assets/site/room-parquet.webp',
     done:'https://d2ol7oe51mr4n9.cloudfront.net/user_3IjjaE9cBh5rjRvE9kXvd8ehG8t/75874eb9-c080-4f2d-bc84-1e929de60f26.png'
   };
   const section=document.querySelector('.experience');
