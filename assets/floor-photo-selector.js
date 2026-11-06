@@ -12,6 +12,12 @@
  const areaOut=document.getElementById('at-area'),areaSummary=document.getElementById('at-config-area');
  const nameOut=document.getElementById('at-config-name');
  const quote=document.getElementById('at-quote');
+ const finalQuote=document.getElementById('closing-quote');
+ const topQuote=document.querySelector('.header-cta');
+ const quickQuote=document.querySelector('.quick-primary');
+ const recap=document.getElementById('selection-recap');
+ const recapDetail=document.getElementById('selection-recap-detail');
+ let engaged=false;
  const primary=document.getElementById('at-photo'),secondary=document.getElementById('at-photo-next');
  const busy=document.getElementById('at-loading');
  const state={tone:'natural',pattern:'herringbone'};
@@ -31,6 +37,16 @@
    nameOut.textContent=finish+' / '+pattern;
    const msg='Merhaba Çetin Parke. Sitenizdeki Parke Tasarla bölümünde '+finish+' ve '+pattern+' görünümünü seçtim. Odamın yaklaşık ölçüleri '+number(width)+' m × '+number(length)+' m ('+areaText+'). Bu seçime uygun gerçek parke alternatifleri ve teklif hakkında bilgi almak istiyorum.';
    quote.href='https://wa.me/905434576364?text='+encodeURIComponent(msg);
+   // Real Estate 3D principle: carry the visitor's actual selection to the final enquiry.
+   // Until the visitor interacts, keep the existing general contact buttons unchanged.
+   if(engaged){
+     for(const link of [finalQuote,topQuote,quickQuote])if(link)link.href=quote.href;
+     if(recap&&recapDetail){
+       recapDetail.textContent=finish+' · '+pattern+' · '+number(width)+' × '+number(length)+' m · '+areaText;
+       recap.hidden=false;
+     }
+     if(finalQuote)finalQuote.textContent='Seçimime Göre Teklif Al ↗';
+   }
  }
  function updatePicture(){
    const url=assets[state.tone][state.pattern];
@@ -69,15 +85,17 @@
  function choose(key,value){
    if(key==='tone'&&Object.hasOwn(tones,value)){state.tone=value; toneButtons.forEach(el=>el.setAttribute('aria-pressed',String(el.dataset.atTone===value)))}
    if(key==='pattern'&&Object.hasOwn(patterns,value)){state.pattern=value;patternButtons.forEach(el=>el.setAttribute('aria-pressed',String(el.dataset.atPattern===value)))}
+   engaged=true;
    updateQuote();updatePicture();
  }
  toneButtons.forEach(button=>button.addEventListener('click',()=>choose('tone',button.dataset.atTone)));
  patternButtons.forEach(button=>button.addEventListener('click',()=>choose('pattern',button.dataset.atPattern)));
  for(const field of [widthField,lengthField]){
-  field.addEventListener('input',updateQuote);
+  field.addEventListener('input',()=>{engaged=true;updateQuote()});
   field.addEventListener('change',()=>{
    const n=safeValue(field,field===widthField?4:5);
    field.value=String(n);
+   engaged=true;
    updateQuote();
   });
  }
