@@ -19,7 +19,7 @@
  const number=n=>new Intl.NumberFormat('tr-TR',{minimumFractionDigits:1,maximumFractionDigits:1}).format(n);
  const safeValue=(field,fallback)=>{
    const n=Number(String(field.value).replace(',','.'));
-   return Number.isFinite(n)&&n>=.5&&n<=100?n:fallback;
+   return Number.isFinite(n)&&n>=2&&n<=15?n:fallback;
  };
  function updateQuote(){
    const width=safeValue(widthField,4),length=safeValue(lengthField,5);
@@ -43,7 +43,7 @@
       return;
    }
    root.classList.add('at-loading-image');
-   if(busy)busy.textContent='Görsel hazırlanıyor…';
+   if(busy)busy.textContent='Seçtiğiniz görünüm yükleniyor…';
    const prefetch=new Image();
    prefetch.decoding='async';
    prefetch.onload=()=>{
@@ -62,7 +62,7 @@
    prefetch.onerror=()=>{
       if(ticket!==revision)return;
       root.classList.remove('at-loading-image');
-      if(busy)busy.textContent='Görsel yüklenemedi; mevcut görünüm korunuyor.';
+      if(busy)busy.textContent='Bu görsel şu an yüklenemedi. Diğer seçenekleri deneyebilirsiniz.';
    };
    prefetch.src=url;
  }
@@ -77,7 +77,7 @@
   field.addEventListener('input',updateQuote);
   field.addEventListener('change',()=>{
    const n=safeValue(field,field===widthField?4:5);
-   field.value=String(Math.min(15,Math.max(2,n)));
+   field.value=String(n);
    updateQuote();
   });
  }
