@@ -34,8 +34,14 @@
  }
  function updatePicture(){
    const url=assets[state.tone][state.pattern];
-   if(!primary||!secondary||url===activeUrl)return;
+   if(!primary||!secondary)return;
    const ticket=++revision;
+   if(url===activeUrl){
+      secondary.classList.remove('visible');
+      root.classList.remove('at-loading-image');
+      if(busy)busy.textContent='';
+      return;
+   }
    root.classList.add('at-loading-image');
    if(busy)busy.textContent='Görsel hazırlanıyor…';
    const prefetch=new Image();
