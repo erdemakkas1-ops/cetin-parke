@@ -75,7 +75,7 @@ body.has-scrolled .site-header{background:rgba(23,30,24,.96)}
 .at-submit{background:#d1ab7c}
 .at-submit:hover{background:#f0cea2}
 .at-disclaimer{font-size:10px;color:#b1b8ab}
-.at-stage{background-color:#9b927f;background-image:url('https://d8j0ntlcm91z4.cloudfront.net/user_3IjjaE9cBh5rjRvE9kXvd8ehG8t/hf_20261106_094127_2ece326a-2b3d-4852-8bfe-458aba96446e.png');background-position:center;background-size:cover;min-height:560px}
+.at-stage{background-color:#9b927f;background-image:none;background-position:center;background-size:cover;min-height:560px}
 .at-stage .at-photo{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;object-position:center;pointer-events:none;user-select:none}
 .at-stage .at-photo-next{opacity:0;transition:opacity .32s ease}
 .at-stage .at-photo-next.visible{opacity:1}
