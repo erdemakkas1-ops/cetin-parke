@@ -186,13 +186,13 @@ body.has-scrolled .site-header{background:rgba(14,21,17,.88);backdrop-filter:blu
 @media(max-width:700px){.quick-actions{right:13px;bottom:15px}.quick-actions a:not(.quick-primary){display:none}.quick-actions .quick-primary{font-size:11px;min-height:46px;padding:0 18px}}
 @media(prefers-reduced-motion:reduce){.quick-actions a,.studio-frame .studio-split i{transition:none!important}}
 </style>
-  <link rel="stylesheet" href="assets/floor-configurator.css?v=1">
-  <script src="assets/floor-configurator.js?v=1" defer></script>
+  <link rel="stylesheet" href="assets/floor-configurator.css?v=1"><link rel="stylesheet" href="assets/site-polish.css?v=2">
+  <script src="assets/floor-photo-selector.js?v=2" defer></script>
 </head>
 <body>
 <header class="site-header">
   <a class="brand" href="#baslangic" aria-label="Çetin Parke ana sayfa"><span class="brand-symbol"><span></span></span><span class="brand-name">ÇETİN <em>PARKE</em><small>ZEMİN & İÇ MEKÂN ÇÖZÜMLERİ</small></span></a>
-  <nav class="menu" aria-label="Ana menü"><a href="#baslangic">Ana Sayfa</a><a href="#koleksiyon">Ürünler</a><a href="#studio">Zemin Stüdyosu</a><a href="#tasarla">Parke Tasarla</a><a href="#iletisim">İletişim</a></nav>
+  <nav class="menu" aria-label="Ana menü"><a href="#baslangic">Ana Sayfa</a><a href="#koleksiyon">Ürünler</a><a href="#studio">Önce / Sonra</a><a href="#tasarla">Parke Seç</a><a href="#iletisim">İletişim</a></nav>
   <button type="button" class="header-menu-button" aria-label="Menüyü aç" aria-expanded="false">☰</button>
   <a class="header-cta" href="https://wa.me/905434576364?text=Merhaba%20%C3%87etin%20Parke%2C%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener noreferrer">WhatsApp'tan Teklif Al ↗</a>
 </header>
@@ -201,45 +201,27 @@ body.has-scrolled .site-header{background:rgba(14,21,17,.88);backdrop-filter:blu
     <div class="pinned">
       <canvas id="sceneCanvas" aria-label="Beton zeminden parkeye, boş odadan tamamlanmış salona dönüşüm görselleştirmesi" role="img"></canvas>
       <div class="scene-vignette"></div><div class="light-sheen" id="lightSheen"></div>
-      <div class="film-hud" aria-hidden="true"><span class="hud-code">MİMARİ KARE / 001</span><strong id="filmPhase">HAM ZEMİN</strong><span class="hud-rule"></span><small id="filmDetail">MEKÂN / BAŞLANGIÇ</small></div>
-      <div class="timeline-caption" aria-hidden="true">SCROLL DENEYİMİ <span id="filmMeasure">00 · BETON</span></div>
-      <span class="intro-overline">ÇETİN PARKE <span style="margin:0 10px;opacity:.6">/</span>  SAKARYA · PAMUKOVA</span>
+      <div class="film-hud" aria-hidden="true"><span class="hud-code">ÇETİN PARKE</span><strong id="filmPhase">HAM ZEMİN</strong><span class="hud-rule"></span><small id="filmDetail">MEKÂN / BAŞLANGIÇ</small></div>
+      <div class="timeline-caption" aria-hidden="true">DÖNÜŞÜM <span id="filmMeasure">00 · BETON</span></div>
+      <span class="intro-overline">PAMUKOVA / SAKARYA</span>
       <div class="hero-content" id="heroContent">
         <div class="hero-stage" data-stage="0"><span class="eyebrow">01 / BAŞLANGIÇ</span><h1>HAM BİR ALANDAN,<br><em>YAŞAYAN BİR MEKÂNA.</em></h1><p class="stage-desc">Bir yaşam alanının bütün karakteri, ayaklarınızın altından başlar.</p><span class="stage-micro">BETON ZEMİN · İLK ADIM</span></div>
-        <div class="hero-stage" data-stage="1"><span class="eyebrow">02 / UYGULAMA</span><h2>HER PARÇA,<br><em>BİR HİKÂYE.</em></h2><p class="stage-desc">Parke, her scroll hareketinizle adım adım yerini buluyor.</p><span class="stage-micro">ZEMİN DÖŞEME İLERLEMESİ</span></div>
+        <div class="hero-stage" data-stage="1"><span class="eyebrow">02 / UYGULAMA</span><h2>HER PARÇA,<br><em>BİR HİKÂYE.</em></h2><p class="stage-desc">Parke döşeme aşamalarını kaydırarak izleyin.</p><span class="stage-micro">ZEMİN DÖŞEME İLERLEMESİ</span></div>
         <div class="hero-stage" data-stage="2"><span class="eyebrow">03 / DÖNÜŞÜM</span><h2>ZEMİNDEN<br><em>ATMOSFERE.</em></h2><p class="stage-desc">Doğal ahşap dokusu, aynı mekâna bambaşka bir sıcaklık katıyor.</p><span class="stage-micro">MEKÂN TAMAMLANIYOR</span></div>
         <div class="hero-stage" data-stage="3"><span class="eyebrow">04 / YENİ BİR BAŞLANGIÇ</span><h2>MEKÂNLARA<br><em>DEĞER KATIYORUZ.</em></h2><p class="stage-desc">Parke, iç kapı, banyo dolabı ve duşakabin çözümlerimizle tanışın.</p><div class="stage-actions"><a class="btn primary" href="https://wa.me/905434576364?text=Merhaba%20%C3%87etin%20Parke%2C%20teklif%20almak%20istiyorum." target="_blank" rel="noopener noreferrer">Teklif Al ↗</a><a class="btn secondary" href="#koleksiyon">Ürünleri İncele ↓</a></div></div>
       </div>
       <ol class="steps" aria-label="Dönüşüm aşamaları"><li class="step"><i class="step-dot"></i><span>Ham Mekân</span></li><li class="step"><i class="step-dot"></i><span>Parke Uygulaması</span></li><li class="step"><i class="step-dot"></i><span>Mekân Canlanıyor</span></li><li class="step"><i class="step-dot"></i><span>Yeni Yaşam Alanı</span></li></ol>
       <div class="bottom-bar"><div class="scroll-cue"><i class="mouse"></i><span>SCROLL İLE DÖNÜŞTÜR</span></div><div class="scroll-count"><span id="progressText">000%</span><span class="track"><b id="progressBar"></b></span></div></div>
-      <div class="concept-note">Konsept görselleştirmedir. Gerçek uygulama fotoğrafı değildir.</div>
+      <div class="concept-note">Temsili görselleştirme</div>
     </div>
   </section>
 
-  <section class="craft-process" id="surec" aria-labelledby="craft-title">
-    <div class="craft-heading">
-      <div><span class="eyebrow dark">DÖNÜŞÜMÜN ANATOMİSİ</span><h2 id="craft-title">TEK MEKÂN.<br><em>ÜÇ FARKLI HİS.</em></h2></div>
-      <p>Güçlü bir yaşam alanı, tek bir ürün fotoğrafından fazlasını hak eder. Burada aynı ortamı adım adım izleyebilir ve zeminin mekânın atmosferini nasıl değiştirdiğini keşfedebilirsiniz.</p>
-    </div>
-    <div class="craft-steps">
-      <article class="craft-step"><span class="craft-number">01 / ÖNCE</span><div class="craft-bar"></div><h3>Ham zemin</h3><p>Boş bir yüzey. Mekânın dönüşümü için başlangıç noktası.</p></article>
-      <article class="craft-step"><span class="craft-number">02 / UYGULAMA</span><div class="craft-bar"></div><h3>Ahşap dokusu</h3><p>Parkenin karakteri, adım adım zemin üzerinde belirginleşir.</p></article>
-      <article class="craft-step"><span class="craft-number">03 / SONRA</span><div class="craft-bar"></div><h3>Yaşayan mekân</h3><p>Doku, ışık ve mobilyalar birleşerek bütünlüklü bir atmosfer oluşturur.</p></article>
-    </div>
-  </section>
   <section class="material-studio" id="studio" aria-labelledby="studio-title">
     <div class="studio-copy">
-      <span class="eyebrow">ÇETİN PARKE / ETKİLEŞİMLİ STÜDYO</span>
-      <h2 id="studio-title">DOKUYU<br><em>SİZ SEÇİN.</em></h2>
-      <p>Beton zeminden ahşabın sıcaklığına geçişi kendiniz kontrol edin. Farklı tonların mekâna kattığı hissi deneyin; hoşunuza giden görünümü teklif mesajınıza ekleyin.</p>
-      <p class="studio-meta">GÖRSEL RENK DENEMELERİ · TEMSİLİ</p>
-      <div class="finish-tabs" role="radiogroup" aria-label="Ahşap tonu">
-        <button type="button" role="radio" aria-checked="true" data-tone="natural"><span class="finish-swatch"></span><span><strong>Doğal Meşe</strong><small>Sıcak ve dengeli</small></span></button>
-        <button type="button" role="radio" aria-checked="false" data-tone="light"><span class="finish-swatch light"></span><span><strong>Açık Meşe</strong><small>Aydınlık ve sade</small></span></button>
-        <button type="button" role="radio" aria-checked="false" data-tone="dark"><span class="finish-swatch dark"></span><span><strong>Koyu Ahşap</strong><small>Derin ve karakterli</small></span></button>
-      </div>
-      <a class="studio-action" id="studio-quote" href="https://wa.me/905434576364" target="_blank" rel="noopener noreferrer">BU GÖRÜNÜMLE TEKLİF İSTE <span aria-hidden="true">↗</span></a>
-      <small class="studio-notice">Bu renk denemeleri konsept görselleştirmedir; Çetin Parke'nin doğrulanmış stok veya renk kataloğu değildir. Gerçek ürün seçeneklerini işletmeden öğrenebilirsiniz.</small>
+      <span class="eyebrow">ÖNCE & SONRA</span>
+      <h2 id="studio-title">FARKI<br><em>GÖRÜN.</em></h2>
+      <p>Beton zemin ve parke döşenmiş halini karşılaştırın. Fotoğrafın üzerindeki çizgiyi sağa veya sola sürükleyin.</p>
+      <a class="studio-action" href="#tasarla">Parke seçeneklerini incele <span aria-hidden="true">↗</span></a>
     </div>
     <div class="studio-view">
       <div class="studio-frame" id="studio-frame" role="slider" tabindex="0" aria-label="Beton ve parke görsel karşılaştırması" aria-describedby="studio-drag-help" aria-valuemin="0" aria-valuemax="100" aria-valuenow="66" aria-valuetext="Parke yüzde 66, beton yüzde 34">
@@ -247,31 +229,31 @@ body.has-scrolled .site-header{background:rgba(14,21,17,.88);backdrop-filter:blu
         <img class="after" id="studio-finish-image" loading="lazy" draggable="false" alt="" src="https://d8j0ntlcm91z4.cloudfront.net/user_3IjjaE9cBh5rjRvE9kXvd8ehG8t/hf_20261106_094127_2ece326a-2b3d-4852-8bfe-458aba96446e.png">
         <div class="studio-split" id="studio-divider" aria-hidden="true"><i>↔</i></div>
         <div class="studio-caption" aria-hidden="true"><span>ÖNCE / BETON</span><span>SONRA / PARKE</span></div>
-        <div class="studio-drag-hint" id="studio-drag-hint" aria-hidden="true">GÖRSELİ SAĞA / SOLA SÜRÜKLE <span>↔</span></div>
+        <div class="studio-drag-hint" id="studio-drag-hint" aria-hidden="true">SAĞA / SOLA SÜRÜKLE <span>↔</span></div>
       </div>
-      <p class="studio-footnote" id="studio-drag-help"><strong>Kontrol sizde:</strong> Görselin üzerinde parmağınızı ya da fareyi sağa sola kaydırın. Klavyede ← ve → tuşlarıyla da karşılaştırabilirsiniz.</p>
+      <p class="studio-footnote" id="studio-drag-help">Fotoğraftaki ayırıcıyı sürükleyerek değişimi inceleyebilirsiniz. Görseller örnek amaçlı hazırlanmıştır.</p>
     </div>
   </section>
-  <section class="collection" id="koleksiyon"><div class="section-top"><div><span class="eyebrow dark">ÜRÜN KOLEKSİYONU</span><h2>DETAYLARDA<br><em>FARK YARATIYORUZ.</em></h2></div><p>Yaşam alanınızın her köşesine uyum sağlayan ürün gruplarımızı keşfedin.</p></div><div class="products">
-    <a class="product" href="https://wa.me/905434576364?text=Merhaba%2C%20parke%20%C3%BCr%C3%BCnleri%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener"><div class="product-visual art-floor"><span class="product-number">01 / DOĞAL DOKU</span></div><h3>Parke</h3><small>Ahşabın sıcaklığını hissedin.</small><span class="product-arrow">↗</span></a>
-    <a class="product" href="https://wa.me/905434576364?text=Merhaba%2C%20i%C3%A7%20kap%C4%B1%20%C3%BCr%C3%BCnleri%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener"><div class="product-visual art-door"><span class="product-number">02 / MİMARİ DETAY</span><span class="door-frame" aria-hidden="true"></span></div><h3>İç Kapılar</h3><small>Stilinizi tamamlayan dokunuş.</small><span class="product-arrow">↗</span></a>
-    <a class="product" href="https://wa.me/905434576364?text=Merhaba%2C%20banyo%20dolaplar%C4%B1%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener"><div class="product-visual art-vanity"><span class="product-number">03 / ZARAFET</span><span class="mirror" aria-hidden="true"></span><span class="sink" aria-hidden="true"></span><span class="cabinet" aria-hidden="true"></span></div><h3>Banyo Dolapları</h3><small>Her detayda işlev ve şıklık.</small><span class="product-arrow">↗</span></a>
-    <a class="product" href="https://wa.me/905434576364?text=Merhaba%2C%20du%C5%9Fakabin%20%C3%BCr%C3%BCnleri%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener"><div class="product-visual art-shower"><span class="product-number">04 / MODERN YAŞAM</span><span class="glass" aria-hidden="true"></span></div><h3>Duşakabin</h3><small>Banyonuza modern bir görünüm.</small><span class="product-arrow">↗</span></a>
-  </div><a class="at-open-atelier" href="#tasarla">KENDİ PARKE GÖRÜNÜMÜNÜ TASARLA <span aria-hidden="true">↘</span></a><p class="concept-products-notice">Ürün görselleri tasarım konseptidir; işletmenin gerçek ürün, uygulama veya stok fotoğrafı olarak değerlendirilmemelidir.</p></section>
+  <section class="collection" id="koleksiyon"><div class="section-top"><div><span class="eyebrow dark">ÜRÜN KOLEKSİYONU</span><h2>EVİNİZİN HER<br><em>ALANINDA.</em></h2></div><p>Parkeden iç kapıya, banyo dolabından duşakabine ihtiyaçlarınıza uygun seçenekleri birlikte belirleyelim.</p></div><div class="products">
+    <a class="product" href="https://wa.me/905434576364?text=Merhaba%2C%20parke%20%C3%BCr%C3%BCnleri%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener"><div class="product-visual art-floor"><span class="product-number">01 / DOĞAL DOKU</span></div><h3>Parke</h3><small>Farklı renk ve döşeme seçenekleri.</small><span class="product-arrow">↗</span></a>
+    <a class="product" href="https://wa.me/905434576364?text=Merhaba%2C%20i%C3%A7%20kap%C4%B1%20%C3%BCr%C3%BCnleri%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener"><div class="product-visual art-door"><span class="product-number">02 / MİMARİ DETAY</span><span class="door-frame" aria-hidden="true"></span></div><h3>İç Kapılar</h3><small>Mekânınıza uyumlu kapı çözümleri.</small><span class="product-arrow">↗</span></a>
+    <a class="product" href="https://wa.me/905434576364?text=Merhaba%2C%20banyo%20dolaplar%C4%B1%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener"><div class="product-visual art-vanity"><span class="product-number">03 / ZARAFET</span><span class="mirror" aria-hidden="true"></span><span class="sink" aria-hidden="true"></span><span class="cabinet" aria-hidden="true"></span></div><h3>Banyo Dolapları</h3><small>Kullanışlı banyo dolabı seçenekleri.</small><span class="product-arrow">↗</span></a>
+    <a class="product" href="https://wa.me/905434576364?text=Merhaba%2C%20du%C5%9Fakabin%20%C3%BCr%C3%BCnleri%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener"><div class="product-visual art-shower"><span class="product-number">04 / MODERN YAŞAM</span><span class="glass" aria-hidden="true"></span></div><h3>Duşakabin</h3><small>Banyonuz için duşakabin çözümleri.</small><span class="product-arrow">↗</span></a>
+  </div><a class="at-open-atelier" href="#tasarla">Parke seçeneklerini karşılaştır <span aria-hidden="true">↘</span></a><p class="concept-products-notice">Ürün fotoğrafları temsili görsellerdir. Güncel modeller için iletişime geçebilirsiniz.</p></section>
   
   <section class="floor-atelier" id="tasarla" aria-labelledby="at-title">
     <div class="at-header">
       <div>
-        <span class="at-eyebrow">ÇETİN PARKE / DİJİTAL TASARIM ATÖLYESİ</span>
-        <h2 id="at-title">SEÇ. TASARLA.<br><em>HİSSET.</em></h2>
+        <span class="at-eyebrow">PARKE SEÇİM REHBERİ</span>
+        <h2 id="at-title">ZEMİNİNİZİ<br><em>SEÇİN.</em></h2>
       </div>
-      <p>Parkenizin karakterini kendiniz belirleyin. Ahşap tonunu ve döşeme düzenini değiştirin; hazırladığınız konseptle doğrudan teklif isteyin.</p>
+      <p>Ahşap tonunu ve döşeme şeklini seçerek aynı mekândaki farklı görünümleri karşılaştırın. Odanızın yaklaşık ölçüsünü girip teklif isteyin.</p>
     </div>
     <div class="at-body">
       <div class="at-controls">
-        <div class="at-headerline"><strong>Parke Tasarla</strong><span>01 / 03 · KONFİGÜRATÖR</span></div>
+        <div class="at-headerline"><strong>Parke Tasarla</strong><span>GÖRÜNÜM SEÇİMİ</span></div>
         <div class="at-group" role="group" aria-labelledby="at-color-label">
-          <p class="at-label" id="at-color-label">01 — AHŞAP TONU <span>Görsel deneme</span></p>
+          <p class="at-label" id="at-color-label">01 — AHŞAP TONU <span>Renk alternatifleri</span></p>
           <div class="at-swatch-grid">
             <button class="at-choice" type="button" data-at-tone="natural" aria-pressed="true"><i class="at-swatch" aria-hidden="true"></i><span>Doğal Meşe</span></button>
             <button class="at-choice" type="button" data-at-tone="light" aria-pressed="false"><i class="at-swatch" data-swatch="light" aria-hidden="true"></i><span>Açık Meşe</span></button>
@@ -279,37 +261,38 @@ body.has-scrolled .site-header{background:rgba(14,21,17,.88);backdrop-filter:blu
           </div>
         </div>
         <div class="at-group" role="group" aria-labelledby="at-pattern-label">
-          <p class="at-label" id="at-pattern-label">02 — DÖŞEME DÜZENİ <span>3 görünüm</span></p>
+          <p class="at-label" id="at-pattern-label">02 — DÖŞEME DÜZENİ <span>Düzen seçenekleri</span></p>
           <div class="at-pattern-grid">
-            <button class="at-pattern" type="button" data-at-pattern="herringbone" aria-pressed="true"><strong>Balıksırtı</strong><small>01 / DİNAMİK ↗</small></button>
-            <button class="at-pattern" type="button" data-at-pattern="straight" aria-pressed="false"><strong>Düz Döşeme</strong><small>02 / ZAMANSIZ ↗</small></button>
-            <button class="at-pattern" type="button" data-at-pattern="wide" aria-pressed="false"><strong>Geniş Tahta</strong><small>03 / MİNİMAL ↗</small></button>
+            <button class="at-pattern" type="button" data-at-pattern="herringbone" aria-pressed="true"><strong>Balıksırtı</strong><small>Klasik</small></button>
+            <button class="at-pattern" type="button" data-at-pattern="straight" aria-pressed="false"><strong>Düz Döşeme</strong><small>Düzenli</small></button>
+            <button class="at-pattern" type="button" data-at-pattern="wide" aria-pressed="false"><strong>Geniş Tahta</strong><small>Sade</small></button>
           </div>
         </div>
         <div class="at-group" role="group" aria-labelledby="at-dimension-label">
-          <p class="at-label" id="at-dimension-label">03 — MEKÂN ÖLÇÜSÜ <span>Yaklaşık alan</span></p>
+          <p class="at-label" id="at-dimension-label">03 — MEKÂN ÖLÇÜSÜ <span>m² hesabı</span></p>
           <div class="at-metrics">
             <label class="at-field" for="at-width"><span>En (metre)</span><input id="at-width" type="number" min="2" max="15" step="0.1" value="4" inputmode="decimal" autocomplete="off"></label>
             <label class="at-field" for="at-length"><span>Boy (metre)</span><input id="at-length" type="number" min="2" max="15" step="0.1" value="5" inputmode="decimal" autocomplete="off"></label>
           </div>
-          <div class="at-area-result" aria-live="polite"><span>Hesaplanan net alan</span><div><strong id="at-area">20,0 m²</strong><small> · yaklaşık</small></div></div>
+          <div class="at-area-result" aria-live="polite"><span>Yaklaşık zemin alanı</span><div><strong id="at-area">20,0 m²</strong><small> · yaklaşık</small></div></div>
         </div>
-        <a class="at-submit" id="at-quote" href="https://wa.me/905434576364" target="_blank" rel="noopener noreferrer">SEÇİMİMLE TEKLİF AL <span aria-hidden="true">↗</span></a>
-        <p class="at-disclaimer">Bu alan bir tasarım konseptidir; gerçek ürün stokları, döşeme uygulanabilirliği, zayiat ve fiyat işletme tarafından ayrıca teyit edilmelidir.</p>
+        <a class="at-submit" id="at-quote" href="https://wa.me/905434576364" target="_blank" rel="noopener noreferrer">SEÇİME GÖRE TEKLİF AL <span aria-hidden="true">↗</span></a>
+        <p class="at-disclaimer">Görseller örnek uygulamadır. Gerçek ürün, stok, metraj ve fiyat bilgisi için iletişime geçin.</p>
       </div>
       <div class="at-visual">
         <div class="at-stage">
-          <canvas id="at-canvas" role="img" aria-label="Ahşap tonu ve döşeme biçimi seçimlerine göre değişen temsilî parke zemin görselleştirmesi"></canvas>
-          <div class="at-stage-top" aria-hidden="true"><strong>CANLI GÖRSEL ÖNİZLEME <span style="color:#edc796">●</span></strong><small>ÇETİN PARKE<br>CONCEPT STUDIO / 01</small></div>
-          <div class="at-stage-bottom" aria-live="polite"><div><small>SEÇİLEN GÖRÜNÜM</small><h3 id="at-config-name">Doğal Meşe / Balıksırtı</h3></div><span class="at-counter" id="at-config-area">20,0 m²</span></div>
+          <img id="at-photo" class="at-photo" alt="Parke döşeme ve ahşap tonu seçiminin aynı odadaki örnek görünümü" src="https://d8j0ntlcm91z4.cloudfront.net/user_3IjjaE9cBh5rjRvE9kXvd8ehG8t/hf_20261106_125751_ed2d04dd-7b07-4742-adac-114ebab24972.png" loading="lazy" decoding="async"><img id="at-photo-next" class="at-photo at-photo-next" alt="" aria-hidden="true" decoding="async"><span class="at-photo-loading" id="at-loading" role="status" aria-live="polite"></span>
+          <div class="at-stage-top" aria-hidden="true"><strong>SEÇİME GÖRE GÖRÜNÜM</strong><small>AYNI MEKÂN<br>FARKLI DOKULAR</small></div>
+          <div class="at-stage-bottom" aria-live="polite"><div><small>SEÇİLEN PARKE</small><h3 id="at-config-name">Doğal Meşe / Balıksırtı</h3></div><span class="at-counter" id="at-config-area">20,0 m²</span></div>
         </div>
-        <div class="at-info"><span>Bir ton veya döşeme düzeni seçin. Değişikliği yukarıdaki görselde göreceksiniz.</span><b>ÜCRETSİZ DİJİTAL DENEME</b></div>
+        <div class="at-info"><span>Ton ve döşeme biçimini değiştirdiğinizde fotoğraf güncellenir.</span><b>GÖRSEL ÖRNEKLER</b></div>
       </div>
     </div>
   </section>
-  <section class="statement" id="hakkimizda"><span class="eyebrow">ÇETİN PARKE</span><h2>İYİ BİR MEKÂN,<br><em>DOĞRU ZEMİNLE BAŞLAR.</em></h2><p>Hayal ettiğiniz yaşam alanı için doğru ürünleri birlikte seçelim.</p><a class="btn primary" href="https://wa.me/905434576364" target="_blank" rel="noopener">Projeniz İçin Görüşelim ↗</a></section>
+  <section class="craft-process" id="surec" aria-labelledby="craft-title"><div class="craft-heading"><div><span class="eyebrow dark">ÇALIŞMA SÜRECİ</span><h2 id="craft-title">DOĞRU SEÇİM.<br><em>GÜZEL SONUÇ.</em></h2></div><p>İhtiyaç duyduğunuz parke ve iç mekân ürünleri için iletişime geçin. Mekânın ölçülerine ve beklentilerinize göre uygun seçenekleri birlikte değerlendirelim.</p></div><div class="craft-steps"><article class="craft-step"><span class="craft-number">01 / İHTİYAÇ</span><div class="craft-bar"></div><h3>Bizimle görüşün</h3><p>Mekânınızdan, ölçülerinizden ve aklınızdaki görünümden bahsedin.</p></article><article class="craft-step"><span class="craft-number">02 / ÜRÜN</span><div class="craft-bar"></div><h3>Seçenekleri belirleyin</h3><p>Renk, desen ve kullanım ihtiyacınıza uygun alternatifleri inceleyin.</p></article><article class="craft-step"><span class="craft-number">03 / TEKLİF</span><div class="craft-bar"></div><h3>Teklif alın</h3><p>Seçimleriniz ve ölçüleriniz doğrultusunda detayları görüşün.</p></article></div></section>
+<section class="statement" id="hakkimizda"><span class="eyebrow">ÇETİN PARKE</span><h2>MEKÂNINIZA<br><em>YAKIŞAN SEÇİMLER.</em></h2><p>Parke, iç kapı, banyo dolabı ve duşakabin seçenekleri hakkında bilgi ve teklif almak için bize ulaşın.</p><a class="btn primary" href="https://wa.me/905434576364" target="_blank" rel="noopener">Teklif ve Bilgi Al ↗</a></section>
 </main>
-<footer class="footer" id="iletisim"><div class="footer-grid"><div><span class="eyebrow">İLETİŞİM</span><h2>BİRLİKTE<br><em>BAŞLAYALIM.</em></h2></div><div class="footer-contact"><strong>Çetin Parke</strong><br>Akhisar, Türkoçağı Caddesi No:56<br>Pamukova / Sakarya<br><a href="tel:+905434576364">0543 457 63 64</a><br><a href="https://www.instagram.com/cetin.parke/" target="_blank" rel="noopener">Instagram ↗</a></div></div><div class="footer-base"><span>© 2026 ÇETİN PARKE</span><span>MEKÂNLARA DEĞER KATIYORUZ.</span></div></footer>
+<footer class="footer" id="iletisim"><div class="footer-grid"><div><span class="eyebrow">İLETİŞİM</span><h2>İLETİŞİME<br><em>GEÇELİM.</em></h2></div><div class="footer-contact"><strong>Çetin Parke</strong><br>Akhisar, Türkoçağı Caddesi No:56<br>Pamukova / Sakarya<br><a href="tel:+905434576364">0543 457 63 64</a><br><a href="https://www.instagram.com/cetin.parke/" target="_blank" rel="noopener">Instagram ↗</a></div></div><div class="footer-base"><span>© 2026 ÇETİN PARKE</span><span>MEKÂNLARA DEĞER KATIYORUZ.</span></div></footer>
 <aside class="quick-actions" aria-label="Hızlı iletişim">
   <a class="quick-primary" href="https://wa.me/905434576364?text=Merhaba%2C%20%C3%87etin%20Parke%20%C3%BCr%C3%BCnleri%20hakk%C4%B1nda%20teklif%20almak%20istiyorum." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp'tan teklif al">WHATSAPP ↗</a>
   <a href="tel:+905434576364" aria-label="Çetin Parke'yi ara">ARA</a>
