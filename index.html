@@ -175,18 +175,18 @@
     ctx.clip();drawCover('wood');ctx.restore();
   }
   function stageVisibility(p){
-    // Opacity and micro-translations are entirely calculated from current scroll.
-    const anchors=[0,.29,.66,.9];
+    // Adjacent stage weights always sum to 1: never a blank title frame.
+    const fade01=smooth((p-.19)/.10);
+    const fade12=smooth((p-.58)/.12);
+    const fade23=smooth((p-.81)/.13);
+    const weights=[1-fade01,fade01*(1-fade12),fade12*(1-fade23),fade23];
     for(let i=0;i<4;i++){
-      let opacity;
-      if(i===0)opacity=1-smooth((p-.16)/.14);
-      else if(i===3)opacity=smooth((p-.82)/.13);
-      else {const fadeIn=smooth((p-(anchors[i]-.10))/.12);const fadeOut=1-smooth((p-(anchors[i]+.21))/.1);opacity=fadeIn*fadeOut;}
+      const opacity=weights[i];
       stages[i].style.opacity=String(opacity);
       stages[i].style.transform=`translateY(${(1-opacity)*18}px)`;
       stages[i].classList.toggle('current',opacity>.55);
     }
-    let active=p<.23?0:p<.65?1:p<.86?2:3;
+    const active=p<.24?0:p<.64?1:p<.87?2:3;
     steps.forEach((el,i)=>el.classList.toggle('active',i===active));
     progressBar.style.width=(p*100).toFixed(1)+'%';
     progressText.textContent=String(Math.round(p*100)).padStart(3,'0')+'%';
