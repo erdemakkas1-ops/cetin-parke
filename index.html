@@ -6,7 +6,8 @@
   <meta name="theme-color" content="#191a16" />
   <meta name="description" content="Çetin Parke — Pamukova / Sakarya. Parke, iç kapı, banyo dolabı ve duşakabin çözümleri." />
   <title>Çetin Parke | Mekânlara Değer Katıyoruz</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://d8j0ntlcm91z4.cloudfront.net" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&display=swap" rel="stylesheet" /><link rel="preconnect" href="https://d8j0ntlcm91z4.cloudfront.net" crossorigin />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <style>
@@ -74,7 +75,7 @@
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.hero-stage{transition:none!important}.product-visual{transition:none!important}}
   
 /* Maviron-inspired editorial layer — bespoke Çetin Parke visual identity */
-@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&display=swap');
+
 :root{--cp-forest:#121a16;--cp-bone:#f0ece4;--cp-oak:#d8ae78}
 body{overflow-x:clip}
 .site-header{position:fixed;top:0;left:0;right:0;height:78px;background:linear-gradient(180deg,rgba(10,15,13,.9),rgba(10,15,13,.28));border-bottom:1px solid rgba(255,255,255,.22);transition:background .2s,backdrop-filter .2s}
@@ -272,6 +273,27 @@ body.has-scrolled .site-header{background:rgba(14,21,17,.88);backdrop-filter:blu
   }
   const plankCount=18*11;
   const floorTop=x=>0.615+0.035*(1-x);
+  function drawArchitectGuides(p){
+    // Architectural drafting grid fades as actual parquet boards are installed.
+    // Like Maviron's building diagram, every line is a pure function of scroll.
+    const opacity=(1-smooth((p-.10)/.20))*.34;
+    if(opacity<=.001)return;
+    const w=canvas.width,h=canvas.height,top=h*.615;
+    ctx.save();
+    ctx.lineWidth=Math.max(1,dpr*.7);
+    ctx.strokeStyle='rgba(233,194,141,'+opacity.toFixed(3)+')';
+    ctx.beginPath();
+    for(let i=0;i<=10;i++){
+      ctx.moveTo(w*(.17+i*.066),top);
+      ctx.lineTo(w*(i/10),h);
+    }
+    for(let i=1;i<=7;i++){
+      const distance=Math.pow(i/7,1.7);
+      const y=top+(h-top)*distance;
+      ctx.moveTo(0,y);ctx.lineTo(w,y);
+    }
+    ctx.stroke();ctx.restore();
+  }
   function drawParquet(p){
     if(!loaded('wood'))return;
     const progress=smooth((p-.14)/.49);
@@ -305,6 +327,21 @@ body.has-scrolled .site-header{background:rgba(14,21,17,.88);backdrop-filter:blu
       }
     }
     ctx.clip();drawCover('wood');ctx.restore();
+    // The actively installed board gets a tiny live edge highlight, then settles.
+    const current=Math.floor(full);
+    const row=Math.floor(current/11),column=current%11;
+    if(row<18&&column>=0&&full<plankCount){
+      const t=row/18,b=(row+1)/18;
+      const yt=(.615+Math.pow(t,1.28)*.42)*canvas.height;
+      const yb=(.615+Math.pow(b,1.28)*.42)*canvas.height;
+      const c=row%2===0?column:10-column;
+      const left=(c/11)*canvas.width,right=((c+1)/11)*canvas.width;
+      if(yb>yt){
+        ctx.save();ctx.strokeStyle='rgba(238,197,142,'+(0.35*(1-(full-current))).toFixed(3)+')';
+        ctx.lineWidth=Math.max(1,dpr*1.4);ctx.shadowColor='rgba(40,24,10,.24)';ctx.shadowBlur=4*dpr;
+        ctx.strokeRect(left,yt,right-left,yb-yt);ctx.restore();
+      }
+    }
   }
   function stageVisibility(p){
     // Adjacent stage weights always sum to 1: never a blank title frame.
@@ -327,6 +364,7 @@ body.has-scrolled .site-header{background:rgba(14,21,17,.88);backdrop-filter:blu
   function render(){raf=0;if(!ctx)return;
     ctx.save();ctx.fillStyle='#6e6960';ctx.fillRect(0,0,canvas.width,canvas.height);
     if(!drawCover('raw'))drawCover('done');
+    drawArchitectGuides(scrollProgress);
     drawParquet(scrollProgress);
     // Furnishing and final daylight appear only after parquet is installed.
     if(loaded('done')){ctx.globalAlpha=smooth((scrollProgress-.70)/.24);drawCover('done');ctx.globalAlpha=1}
