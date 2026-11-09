@@ -19,9 +19,20 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/configure-pages@v5
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      # Static export under https://erdemakkas1-ops.github.io/cetin-parke/
+      - name: Build
+        env:
+          PAGES_BASE_PATH: /cetin-parke
+        run: |
+          npm install --no-audit --no-fund
+          npm run build
+          touch out/.nojekyll
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: ./docs
+          path: ./out
       - name: Publish GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
